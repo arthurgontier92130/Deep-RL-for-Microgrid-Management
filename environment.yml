@@ -1,14 +1,23 @@
 name: microgrid
 channels:
   - conda-forge
+channel_priority: strict
 dependencies:
   - python=3.10
+  # Force OpenBLAS to avoid MKL/AVX issues on older CPUs
+  - blas=*=openblas
   - numpy
+  - scipy
   - pandas
   - matplotlib
-  - gymnasium
-  - stable-baselines3
   - jupyter
+
+  # RL stack
+  - gymnasium
+  - pytorch       # CPU build from conda-forge (no CUDA)
+  - stable-baselines3
+
+  # nice-to-haves
   - pip
   - pip:
       - tqdm
