@@ -1,5 +1,5 @@
 import numpy as np
-import gym
+import gymnasium as gym
 from gym import spaces
 
 class MicrogridEnv(gym.Env):
@@ -67,7 +67,7 @@ class MicrogridEnv(gym.Env):
 
         self.state = np.array([SoC_next, P_load_next, price_next, P_solar_next], dtype=np.float32)
 
-        done = (SoC_next <= 0.0) or (SoC_next >= 1.2)
+        done = False
         self.current_step += 1
 
         return self.state, reward, done, {}

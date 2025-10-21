@@ -1,0 +1,15 @@
+name: microgrid
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - gymnasium
+  - stable-baselines3
+  - jupyter
+  - pip
+  - pip:
+      - tqdm
+      - seaborn
